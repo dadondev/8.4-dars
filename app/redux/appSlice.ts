@@ -10,7 +10,7 @@ const app = createSlice({
     giveData(state, { payload }) {
       if (payload?.id) {
         state.found = true;
-        state.data = payload;
+        state.data = { ...payload };
       } else {
         state.found = false;
       }

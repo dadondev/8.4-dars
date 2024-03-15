@@ -1,4 +1,10 @@
-const Social = () => {
+interface data {
+  location?: string | null;
+  twitter_username?: string | null;
+  blog?: string;
+}
+
+const Social: React.FC<data> = ({ location, twitter_username, blog }) => {
   return (
     <div className="grid gap-4 mt-6 gap-4 sm:grid-cols-2 sm:mt-8">
       <article className="flex items-center gap-5">
@@ -9,7 +15,7 @@ const Social = () => {
           alt="location"
         />
         <span className="text-lightLGray text-sm sm:text-base dark:text-white">
-          San Francisco
+          {location ? location : "Not avaible"}
         </span>
       </article>
       <article className="flex items-center gap-4">
@@ -19,9 +25,12 @@ const Social = () => {
           src="/url.svg"
           alt="location"
         />
-        <span className="text-lightLGray text-sm sm:text-base dark:text-white">
+        <a
+          href={blog}
+          className="text-lightLGray text-sm sm:text-base dark:text-white"
+        >
           https://github.blog
-        </span>
+        </a>
       </article>
       <article className="flex items-center gap-4">
         <img
@@ -30,9 +39,12 @@ const Social = () => {
           src="/twit.png"
           alt="location"
         />
-        <span className="text-lightLGray text-sm sm:text-base dark:text-white">
-          Not Available
-        </span>
+        <a
+          href={twitter_username ? twitter_username : ""}
+          className="text-lightLGray text-sm sm:text-base dark:text-white"
+        >
+          {twitter_username ? twitter_username : "Not Available"}
+        </a>
       </article>
       <article className="flex items-center gap-4">
         <img

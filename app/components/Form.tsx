@@ -5,7 +5,6 @@ import Input from "./Input";
 import SearchBtn from "./SearchBtn";
 import { useDispatch } from "react-redux";
 import app from "../redux/appSlice";
-import { useSelector } from "react-redux";
 const baseUrl = "https://api.github.com/users/";
 
 interface Stucture {
@@ -46,13 +45,11 @@ interface Stucture {
 
 const Form = () => {
   const [text, setText] = useState<string>("");
-  const [data, setData] = useState({});
   const dispatch = useDispatch();
   const handleSubmit = async () => {
     const req = await fetch(baseUrl + text);
     const res = await req.json();
     dispatch(app.actions.giveData(res));
-    setData(res);
   };
   return (
     <form
