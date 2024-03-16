@@ -77,8 +77,8 @@ const Content = () => {
           </div>
         </div>
 
-        <div className="flex">
-          <div className="lg:w-[244px] lg:h-32"></div>
+        <div className="lg:flex">
+          <div className="lg:w-[140px] lg:h-32"></div>
           <div>
             <p className="text-lightLGray capitalize text-[13px] sm:text-base dark:text-white">
               {allData?.bio?.length ? allData.bio : "Not avaible"}
@@ -91,7 +91,7 @@ const Content = () => {
             <Social
               location={allData?.location}
               twitter_username={allData?.twitter_username}
-              blog={allData?.blog}  
+              blog={allData?.blog}
             />
           </div>
         </div>
